@@ -1,3 +1,4 @@
+#https://zerojudge.tw/ShowProblem?problemid=i399
 a,b,c=input().split(" ")
 if a==b==c:
     print('3',a)
