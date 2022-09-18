@@ -1,16 +1,32 @@
-first=input()
-numbers=input()
+brother=int(input())
+numbers=int(input())
 sister=input().split(" ")
-for i in range(0,int(numbers)):
-    if first==2 and sister[i]==5:
-        print(first, ":Won at round", i)
-    elif first==0 and sister[i]==2:
-        print(first, "Won at round", i)
-    elif first==5 and sister[i]==0:
-        print(first, "Won at round", i)
-    elif first==2 and sister[i]==0:
-        print(first, "Lost at round", i)
-    elif first==0 and sister[i]==5:
-        print(first, "Lost at round", i)
-    elif first==5 and sister[i]==2:
-        print(first, "Lost at round", i)
+brothers=[]
+brothers.append(brother)
+
+for i in range(1,int(numbers)):
+    if int(sister[i]) == int(sister[i-1]) == 0:
+        brothers.append('5')
+    elif int(sister[i]) == int(sister[i-1]) == 2:
+        brothers.append('0')
+    elif int(sister[i]) == int(sister[i-1]) == 5:
+        brothers.append('2')
+    else:
+        brothers.append(sister[i])
+drew=()
+for a in range(len(brothers)):
+    if int(brothers[a])==2 and int(sister[a])==5:
+        print(drew, brothers[a], ": Won at round", a+1)
+    elif int(brothers[a])==0 and int(sister[a])==2:
+        print(drew, brothers[a], ": Won at round", a+1)
+    elif int(brothers[a])==5 and int(sister[a])==0:
+        print(drew, brothers[a], ": Won at round", a+1)
+    elif int(brothers[a])==2 and int(sister[a])==0:
+        print(drew, brothers[a], ": Lost at round", a+1)
+    elif int(brothers[a])==0 and int(sister[a])==5:
+        print(drew, brothers[a], ": Lost at round", a+1)
+    elif int(brothers[a])==5 and int(sister[a])==2:
+        print(drew, brothers[a], ": Lost at round", a+1)
+    if int(brothers[a])==int(sister[a]) and a+1<numbers:
+        drew
+        
